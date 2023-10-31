@@ -1,0 +1,43 @@
+/* Nav */
+.navBox {
+  width: 100%;
+  background-color: white;
+  box-shadow: 1px 1px 5px 1px gray;
+}
+
+.navBar {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.navBar a {
+  margin-right: 10px;
+  text-decoration: none;
+}
+
+/* Logo box */
+.logoBox {
+  width:15vw;
+  display:inline-block;
+}
+
+/* Menu box */
+.menuBox ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.menuBox li {
+  padding: 0;
+}
+
+.menuBox a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
