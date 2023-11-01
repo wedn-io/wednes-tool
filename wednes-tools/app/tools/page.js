@@ -1,7 +1,13 @@
-export default function qr() {
+import Link from "next/link";
+
+export default function Home() {
   return (
     <div>
-      hello
+      <div>
+        <ul>
+          <li><Link href="/tools/qr">GenerateQRCode QR CODE</Link></li>
+        </ul>
+      </div>
     </div>
   )
 }

@@ -1,0 +1,28 @@
+.nav {
+  max-width: 200px;
+  width: 200px;
+  height: 100%;
+  position: absolute;
+  left: 0px;
+  transition: left 0.5s ease 0s;
+  display: flex;
+  background:rgba(53,97,241, 0.1);
+  border-right: 1px solid rgba(53,97,241, 0.1);
+  
+}
+
+.navMenu {
+  list-style:none;
+  
+}
+
+.navMenu li a {
+  color: white;
+  text-decoration-line : none;
+}
+
+@media (max-width: 740px) {
+  .nav {
+    display:none;
+  }
+}

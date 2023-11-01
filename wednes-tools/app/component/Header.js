@@ -12,17 +12,19 @@ export default function Header() {
       <div className={Style.navBox}>
         <div className={Style.navBar}>
           <div className={Style.logoBox}>
-            <Image
-              src="/wednes_logo.svg"
-              width={150}
-              height={24}
-            />
+            <Link href="/">
+              <Image
+                src="/wednes_logo.svg"
+                width={150}
+                height={24}
+                alt="logo"
+                priority
+              />
+            </Link>
           </div>
           <div className={Style.menuBox}>
             <ul>
               <li><Link href="/tools">Tools</Link></li>
-              <li><Link href="/lab">Lab</Link></li>
-              <li><Link href="/contact">Contact us</Link></li>
             </ul>
           </div>
         </div>

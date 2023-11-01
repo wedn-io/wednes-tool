@@ -4,7 +4,7 @@ body {
 }
 
 .main-container {
-  width:90%;
+  /* width:90%; */
   margin:0 auto;
 }
 
@@ -47,8 +47,10 @@ body {
 }
 
 .qr-code-button {
-  width:395px;
+  /* width:395px; */
+  min-width:340px;
   margin-top:10px;
+  display:block;
 }
 
 .qr-code-input {
@@ -64,9 +66,9 @@ body {
 }
 
 .global-input {
-  width:362px;
+  /* width:362px; */
+  min-width:305px;
   height:24px;
-  min-width: 64px;
   padding: 6px 16px;
   border-radius: 4px;
   border:1px solid #ccc;
@@ -74,7 +76,9 @@ body {
 }
 
 .qr-image-box {
-  width:395px;
+  /* width:395px; */
+  min-width:340px;
+  width:340px;
   height:395px;
   border-radius: 4px;
   border:1px solid #ccc;
@@ -100,4 +104,9 @@ body {
   margin:0 auto;
   text-align:center;
   margin-top:20px;
+}
+
+.qr-layout {
+  width:340px;
+  margin:0 auto;
 }

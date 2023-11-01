@@ -1,17 +1,19 @@
 /* Nav */
 .navBox {
+  min-width:380px;
   width: 100%;
   background-color: white;
+  border-bottom: 1px solid rgba(53,97,241, 0.1);
   box-shadow: 1px 1px 5px 1px gray;
 }
 
 .navBar {
-  width: 90%;
+  min-width:340px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 10px 20px;
 }
 
 .navBar a {

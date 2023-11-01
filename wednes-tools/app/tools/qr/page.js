@@ -1,15 +1,15 @@
 "use client"
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import QRCode from "qrcode";
-
-/* qr코드 생성 */
+// import {QRCodeSVG} from 'qrcode.react';
 
 export default function qrcode() {
   const [text, setText] = useState('');
   const [qrCodeDataUrl, setQRCodeDataUrl] = useState('');
+  const qrRef = useRef(null);
 
-  /* qr코드 생성 함수 */
+  // QR 코드 생성 함수
   const generateQRCode = (event) => {
     event.preventDefault();
     QRCode.toDataURL(text, { width: 300, height: 300 })
@@ -21,31 +21,25 @@ export default function qrcode() {
       });
   };
 
-  /* png 다운로드 */
+  // PNG 다운로드 함수
   const downloadQRCodeAsPNG = (event) => {
     event.preventDefault();
-    const link = document.createElement("a");
-    link.href = qrCodeDataUrl;
-    link.download = "qr-code.png";
-    link.click();
   };
-  /* svg 다운로드 */
+
+  // SVG 다운로드 함수
   const downloadQRCodeAsSVG = (event) => {
     event.preventDefault();
-    const link = document.createElement("a");
-    link.href = qrCodeDataUrl;
-    link.download = "qr-code.svg";
-    link.click();
   };
 
   return (
     <>
-      <div>
-        <h5>Generate URL QR Code</h5>
+      {/* <QRCodeSVG ref={qrRef} value={text} /> */}
+      <h5>Generate URL QR Code</h5>
+      <div className="qr-layout">
         <div className="qr-image-box">
           {/* image area */}
           <div className="qr-image-body">
-            {qrCodeDataUrl ? <img src={qrCodeDataUrl} alt="QR Code" /> : <img src="/qr-code-default.png" alt="QR Code" className="qr-code-default"/>}
+            {qrCodeDataUrl ? <img src={qrCodeDataUrl} alt="QR Code" /> : <img src="/qr-code-default.png" alt="QR Code Empty" className="qr-code-default"/>}
           </div>
           <div className="qr-image-bottom">
             🔽Enter the URL at the bottom🔽
@@ -64,8 +58,13 @@ export default function qrcode() {
           className="global-button qr-code-button">
             Generate QR Code
         </button>
-        <button onClick={downloadQRCodeAsPNG}>.PNG Download</button>
-        <button onClick={downloadQRCodeAsSVG}>.SVG Download</button>
+
+        {qrCodeDataUrl && (
+          <>
+            <button onClick={downloadQRCodeAsPNG} className="global-button-reverse qr-code-button">.PNG Download</button>
+            <button onClick={downloadQRCodeAsSVG} className="global-button-reverse qr-code-button">.SVG Download</button>
+          </>
+        )}
       </div>
     </>
   );
